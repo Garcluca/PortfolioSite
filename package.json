@@ -10,7 +10,9 @@
     "format": "prettier ./src --ignore-unknown --write",
     "format:check": "prettier ./src --ignore-unknown --check",
     "lint": "npm run lint:check -- --fix",
-    "lint:check": "eslint ./src --ext .ts,.tsx"
+    "lint:check": "eslint ./src --ext .ts,.tsx",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "dependencies": {
     "@react-three/drei": "^9.99.5",
