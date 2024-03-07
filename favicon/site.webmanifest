@@ -1,0 +1,10 @@
+{
+    "name": "Lucas Garcia",
+    "short_name": "Lucas Garcia",
+    "icons": [
+
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "standalone"
+}
