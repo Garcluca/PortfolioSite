@@ -255,7 +255,7 @@ export default class Objects {
         }
 
         if (_options.mass && _options.mass === 0) {
-            container.matrixAutoUpdate = false;
+            container.matrixAutoUpdate = true;
             container.updateMatrix();
         }
 
@@ -383,8 +383,12 @@ export default class Objects {
 
         //console.log(object.collision.model.meshes)
         if (_options.scale) {
+            console.log("\n")
+            console.log(_options.scale)
+            console.log(object.container.scale) 
             object.container.scale.copy(_options.scale);
-            console.log(object.container.scale)
+            console.log(_options.scale)
+            console.log(object.container.scale) 
                                                // Scale the physics object similarly to the geometry
         }
         

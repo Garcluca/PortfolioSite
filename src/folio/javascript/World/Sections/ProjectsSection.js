@@ -44,6 +44,18 @@ import projectsKepplerSlideASources from '../../../models/projects/keppler/slide
 import projectsKepplerSlideBSources from '../../../models/projects/keppler/slideB.jpg'
 import projectsKepplerSlideCSources from '../../../models/projects/keppler/slideC.jpg'
 
+
+// handles the bulk creation of every project through giving a list to new projects and handles the positioning of the tile
+// should probably make this all in one thing
+
+//x and y of the start are defined by the intro
+
+
+
+
+//FUTURE ADDITIONS AND USES. 
+// this should be 
+
 export default class ProjectsSection
 {
     constructor(_options)
@@ -65,7 +77,7 @@ export default class ProjectsSection
         if(this.debug)
         {
             this.debugFolder = this.debug.addFolder('projects')
-            this.debugFolder.open()
+           // this.debugFolder.open()
         }
 
         // Set up
@@ -77,7 +89,7 @@ export default class ProjectsSection
 
         this.container = new THREE.Object3D()
         this.container.matrixAutoUpdate = false
-        this.container.updateMatrix()
+        //this.container.updateMatrix()
 
         this.setGeometries()
         this.setMeshes()
@@ -111,6 +123,13 @@ export default class ProjectsSection
 
     setList()
     {
+        // console.log(this.resources.items.projectsOranoFloorTexture)
+        // console.log(this.resources.items)
+        //added offset as a variable, now works with the project creation class, controls position of the elements
+
+
+        //TO CHANGE LOCATION MOVE OFFSET, AND LINK X AND Y
+        //  still need to change the 
         this.list = [
             {
                 name: 'Three.js Journey',
@@ -118,25 +137,34 @@ export default class ProjectsSection
                 [
                     projectsThreejsJourneySlideASources,
                     projectsThreejsJourneySlideBSources,
-                    projectsThreejsJourneySlideCSources,
+                    //projectsThreejsJourneySlideCSources,
                     projectsThreejsJourneySlideDSources
                 ],
-                floorTexture: this.resources.items.projectsThreejsJourneyFloorTexture,
+                floorTexture: this.resources.items.Skill1Texture,
                 link:
                 {
-                    href: 'https://threejs-journey.com?c=p3',
-                    x: - 4.8,
-                    y: - 3,
+                    //this messes with specifically the floor action link 
+                    href: 'https://github.com/Garcluca/AI-Agency',
+                    x:  -4.8,
+                    y: - 4,
                     halfExtents:
                     {
                         x: 3.2,
                         y: 1.5
+
+                        // x: 3.2,
+                        // y: 1.5
                     }
                 },
                 distinctions:
                 [
                     { type: 'fwa', x: 3.95, y: 4.15 }
-                ]
+                ],
+                offset:{
+                    x: 0,
+                    y: 0,
+                    z: 0,
+                }
             },
             {
                 name: 'Madbox',
@@ -146,12 +174,15 @@ export default class ProjectsSection
                     projectsMadboxSlideBSources,
                     projectsMadboxSlideCSources
                 ],
-                floorTexture: this.resources.items.projectsMadboxFloorTexture,
+                floorTexture: this.resources.items.Skill2Texture,
                 link:
                 {
-                    href: 'https://madbox.io',
+                    href: 'https://www.academia.edu/108584828/RWT_Suppressing_Write_Through_Cost_When_Coherence_is_Not_Needed',
                     x: - 4.8,
                     y: - 4,
+
+                    // x: - 4.8,
+                    // y: - 4,
                     halfExtents:
                     {
                         x: 3.2,
@@ -162,7 +193,12 @@ export default class ProjectsSection
                 [
                     { type: 'awwwards', x: 3.95, y: 4.15 },
                     { type: 'fwa', x: 5.6, y: 4.15 }
-                ]
+                ],
+                offset:{
+                    x: 0,
+                    y: 0,
+                    z: 0,
+                },
             },
             {
                 name: 'Scout',
@@ -172,12 +208,12 @@ export default class ProjectsSection
                     projectsScoutSlideBSources,
                     projectsScoutSlideCSources
                 ],
-                floorTexture: this.resources.items.projectsScoutFloorTexture,
+                floorTexture: this.resources.items.Skill3Texture,
                 link:
                 {
-                    href: 'https://fromscout.com',
-                    x: - 4.8,
-                    y: - 2,
+                    href: 'https://github.com/Garcluca/camera-app-final',
+                    x:  -54.8,                          //needs to be updated + the value in offset to make all this shot work
+                    y:  -25.5,
                     halfExtents:
                     {
                         x: 3.2,
@@ -186,156 +222,126 @@ export default class ProjectsSection
                 },
                 distinctions:
                 [
-                ]
-            },
-            {
-                name: 'Chartogne Taillet',
-                imageSources:
-                [
-                    projectsChartogneSlideASources,
-                    projectsChartogneSlideBSources,
-                    projectsChartogneSlideCSources
                 ],
-                floorTexture: this.resources.items.projectsChartogneFloorTexture,
-                link:
-                {
-                    href: 'https://chartogne-taillet.com',
-                    x: - 4.8,
-                    y: - 3.3,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
+                offset:{
+
+                    
+                    x: -50,
+                    y: -20,
+                    z: 0,
                 },
-                distinctions:
-                [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 },
-                    { type: 'cssda', x: 7.2, y: 4.15 }
-                ]
-            },
-            {
-                name: 'Zenly',
-                imageSources:
-                [
-                    projectsZenlySlideASources,
-                    projectsZenlySlideBSources,
-                    projectsZenlySlideCSources
-                ],
-                floorTexture: this.resources.items.projectsZenlyFloorTexture,
-                link:
-                {
-                    href: 'https://zen.ly',
-                    x: - 4.8,
-                    y: - 4.2,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                },
-                distinctions:
-                [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 },
-                    { type: 'cssda', x: 7.2, y: 4.15 }
-                ]
-            },
-            {
-                name: 'priorHoldings',
-                imageSources:
-                [
-                    projectsPriorHoldingsSlideASources,
-                    projectsPriorHoldingsSlideBSources,
-                    projectsPriorHoldingsSlideCSources
-                ],
-                floorTexture: this.resources.items.projectsPriorHoldingsFloorTexture,
-                link:
-                {
-                    href: 'https://prior.co.jp/discover/',
-                    x: - 4.8,
-                    y: - 3,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                },
-                distinctions:
-                [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 },
-                    { type: 'cssda', x: 7.2, y: 4.15 }
-                ]
-            },
-            {
-                name: 'orano',
-                imageSources:
-                [
-                    projectsOranoSlideASources,
-                    projectsOranoSlideBSources,
-                    projectsOranoSlideCSources
-                ],
-                floorTexture: this.resources.items.projectsOranoFloorTexture,
-                link:
-                {
-                    href: 'https://www.orano.group/experience/innovation/',
-                    x: - 4.8,
-                    y: - 3.4,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                },
-                distinctions:
-                [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 },
-                    { type: 'cssda', x: 7.2, y: 4.15 }
-                ]
-            },
-            {
-                name: 'citrixRedbull',
-                imageSources:
-                [
-                    projectsCitrixRedbullSlideASources,
-                    projectsCitrixRedbullSlideBSources,
-                    projectsCitrixRedbullSlideCSources
-                ],
-                floorTexture: this.resources.items.projectsCitrixRedbullFloorTexture,
-                link:
-                {
-                    href: 'https://thenewmobileworkforce.imm-g-prod.com/',
-                    x: - 4.8,
-                    y: - 4.4,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                },
-                distinctions:
-                [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 },
-                    { type: 'cssda', x: 7.2, y: 4.15 }
-                ]
             },
             // {
-            //     name: 'gleecChat',
+            //     name: 'Chartogne Taillet',
             //     imageSources:
             //     [
-            //         projectsGleecChatSlideASources,
-            //         projectsGleecChatSlideBSources,
-            //         projectsGleecChatSlideCSources,
-            //         projectsGleecChatSlideDSources
+            //         projectsChartogneSlideASources,
+            //         projectsChartogneSlideBSources,
+            //         projectsChartogneSlideCSources
             //     ],
-            //     floorTexture: this.resources.items.projectsGleecChatFloorTexture,
+            //     floorTexture: this.resources.items.projectsChartogneFloorTexture,
             //     link:
             //     {
-            //         href: 'http://gleec.imm-g-prod.com',
+            //         href: 'https://chartogne-taillet.com',
+            //         x: - 5.8,
+            //         y: - 3.3,
+            //         halfExtents:
+            //         {
+            //             x: 3.2,
+            //             y: 1.5
+            //         }
+            //     },
+            //     distinctions:
+            //     [
+            //         { type: 'awwwards', x: 3.95, y: 4.15 },
+            //         { type: 'fwa', x: 5.6, y: 4.15 },
+            //         { type: 'cssda', x: 7.2, y: 4.15 }
+            //     ],
+            //     offset:{
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //     },
+            // },
+            // {
+            //     name: 'Zenly',
+            //     imageSources:
+            //     [
+            //         projectsZenlySlideASources,
+            //         projectsZenlySlideBSources,
+            //         projectsZenlySlideCSources
+            //     ],
+            //     floorTexture: this.resources.items.projectsZenlyFloorTexture,
+            //     link:
+            //     {
+            //         href: 'https://zen.ly',
+            //         x: - 4.8,
+            //         y: - 4.2,
+
+            //         //needs to be changed
+            //         halfExtents:
+            //         {
+            //             x: 3.2,
+            //             y: 1.5
+            //         }
+            //     },
+            //     distinctions:
+            //     [
+            //         { type: 'awwwards', x: 3.95, y: 4.15 },
+            //         { type: 'fwa', x: 5.6, y: 4.15 },
+            //         { type: 'cssda', x: 7.2, y: 4.15 }
+            //     ],
+            //     offset:{
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //     },
+            // },
+            // {
+            //     name: 'priorHoldings',
+            //     imageSources:
+            //     [
+            //         projectsPriorHoldingsSlideASources,
+            //         projectsPriorHoldingsSlideBSources,
+            //         projectsPriorHoldingsSlideCSources
+            //     ],
+            //     floorTexture: this.resources.items.projectsPriorHoldingsFloorTexture,
+            //     link:
+            //     {
+            //         href: 'https://prior.co.jp/discover/',
+            //         x: - 4.8,
+            //         y: - 3,
+            //         halfExtents:
+            //         {
+            //             x: 3.2,
+            //             y: 1.5
+            //         }
+            //     },
+            //     distinctions:
+            //     [
+            //         { type: 'awwwards', x: 3.95, y: 4.15 },
+            //         { type: 'fwa', x: 5.6, y: 4.15 },
+            //         { type: 'cssda', x: 7.2, y: 4.15 }
+            //     ],
+            //     offset:{
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //     },
+            // },
+            // {
+            //     name: 'orano',
+            //     imageSources:
+            //     [
+            //         projectsOranoSlideASources,
+            //         projectsOranoSlideBSources,
+            //         projectsOranoSlideCSources
+            //     ],
+            //     floorTexture: this.resources.items.projectsOranoFloorTexture,
+
+            //     link:
+            //     {
+            //         href: 'https://www.orano.group/experience/innovation/',
             //         x: - 4.8,
             //         y: - 3.4,
             //         halfExtents:
@@ -349,40 +355,112 @@ export default class ProjectsSection
             //         { type: 'awwwards', x: 3.95, y: 4.15 },
             //         { type: 'fwa', x: 5.6, y: 4.15 },
             //         { type: 'cssda', x: 7.2, y: 4.15 }
-            //     ]
+            //     ],
+            //     offset:{
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //     },
             // },
-            {
-                name: 'keppler',
-                imageSources:
-                [
-                    projectsKepplerSlideASources,
-                    projectsKepplerSlideBSources,
-                    projectsKepplerSlideCSources
-                ],
-                floorTexture: this.resources.items.projectsKepplerFloorTexture,
-                link:
-                {
-                    href: 'https://brunosimon.github.io/keppler/',
-                    x: 2.75,
-                    y: - 1.1,
-                    halfExtents:
-                    {
-                        x: 3.2,
-                        y: 1.5
-                    }
-                },
-                distinctions: []
-            }
+            // {
+            //     name: 'citrixRedbull',
+            //     imageSources:
+            //     [
+            //         projectsCitrixRedbullSlideASources,
+            //         projectsCitrixRedbullSlideBSources,
+            //         projectsCitrixRedbullSlideCSources
+            //     ],
+            //     floorTexture: this.resources.items.projectsCitrixRedbullFloorTexture,
+            //     link:
+            //     {
+            //         href: 'https://thenewmobileworkforce.imm-g-prod.com/',
+            //         x: - 4.8,
+            //         y: - 4.4,
+            //         halfExtents:
+            //         {
+            //             x: 3.2,
+            //             y: 1.5
+            //         }
+            //     },
+            //     distinctions:
+            //     [
+            //         { type: 'awwwards', x: 3.95, y: 4.15 },
+            //         { type: 'fwa', x: 5.6, y: 4.15 },
+            //         { type: 'cssda', x: 7.2, y: 4.15 }
+            //     ],
+            //     offset:{
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //     },
+            // },
+            // // {
+            // //     name: 'gleecChat',
+            // //     imageSources:
+            // //     [
+            // //         projectsGleecChatSlideASources,
+            // //         projectsGleecChatSlideBSources,
+            // //         projectsGleecChatSlideCSources,
+            // //         projectsGleecChatSlideDSources
+            // //     ],
+            // //     floorTexture: this.resources.items.projectsGleecChatFloorTexture,
+            // //     link:
+            // //     {
+            // //         href: 'http://gleec.imm-g-prod.com',
+            // //         x: - 4.8,
+            // //         y: - 3.4,
+            // //         halfExtents:
+            // //         {
+            // //             x: 3.2,
+            // //             y: 1.5
+            // //         }
+            // //     },
+            // //     distinctions:
+            // //     [
+            // //         { type: 'awwwards', x: 3.95, y: 4.15 },
+            // //         { type: 'fwa', x: 5.6, y: 4.15 },
+            // //         { type: 'cssda', x: 7.2, y: 4.15 }
+            // //     ]
+            // // },
+            // {
+            //     name: 'keppler',
+            //     imageSources:
+            //     [
+            //         projectsKepplerSlideASources,
+            //         projectsKepplerSlideBSources,
+            //         projectsKepplerSlideCSources
+            //     ],
+            //     floorTexture: this.resources.items.projectsKepplerFloorTexture,
+            //     link:
+            //     {
+            //         href: 'https://brunosimon.github.io/keppler/',
+            //         x: 2.75,
+            //         y: - 1.1,
+            //         halfExtents:
+            //         {
+            //             x: 3.2,
+            //             y: 1.5
+            //         }
+            //     },
+            //     distinctions: [],
+            //     offset:{
+            //         x: 0,
+            //         y: 0,
+            //         z: 0,
+            //     }
+            // }
         ]
     }
 
     setZone()
     {
+        //console.log(this.interDistance + "the inner distance ")
         const totalWidth = this.list.length * (this.interDistance / 2)
-
+        //changes the distance of the panning defined in the camera file
+        // essentially defines where the camera goes into profile mode for a better look at the profiles
         const zone = this.zones.add({
-            position: { x: this.x + totalWidth - this.projectHalfWidth - 6, y: this.y },
-            halfExtents: { x: totalWidth, y: 12 },
+            position: { x: this.x + totalWidth - this.projectHalfWidth - 29, y: this.y },
+            halfExtents: { x: totalWidth + 20, y: 14 },
             data: { cameraAngle: 'projects' }
         })
 
@@ -419,7 +497,11 @@ export default class ProjectsSection
             geometries: this.geometries,
             meshes: this.meshes,
             debug: this.debugFolder,
-            x: x,
+         
+
+            //these change position but wholssale, need to find out hoe to not make it just an array
+            //might be the sterting point and change later
+            x: x -25,
             y: y,
             ..._options
         })
@@ -427,6 +509,7 @@ export default class ProjectsSection
         this.container.add(project.container)
 
         // Add tiles
+        //deals with the cosmetic tiles that kind of gude where to go in the projects section
         if(this.items.length >= 1)
         {
             const previousProject = this.items[this.items.length - 1]

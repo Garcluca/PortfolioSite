@@ -29,16 +29,17 @@ export default class Area extends EventEmitter
 
         // Set up
         this.container = new THREE.Object3D()
+        console.log(this.position)
         this.container.position.x = this.position.x 
         this.container.position.y = this.position.y
-        console.log(this.position.z)
-        this.container.position.z =   0          //gets the position for the entire area
+        
+        if(this.position.z){
+            console.log(this.position.z)
+        this.container.position.z =  this.position.z}       //gets the position for the entire area
                                                 // brings with it the design, interaction, and animation
                                                 // witht he game it collides with the entire cell that the car is on reguardless of heaight
                                                 // does not move the label
-
-        //added ability to move up and down 
-        this.container.positionz = this.position.z
+                                                //added ability to move up and down 
         this.container.matrixAutoUpdate = false
         this.container.updateMatrix()
 

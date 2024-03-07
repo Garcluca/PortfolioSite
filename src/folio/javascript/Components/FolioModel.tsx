@@ -14,8 +14,15 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 export default function FolioModel(props) {
 
+
     const gltf = useLoader(GLTFLoader, "./models/intro/static/base.glb")
-    return <primitive object={gltf.scene} scale={[9,9,9]} rotation={[0,0,3]} />
+
+    //rotation should match with introsection.js's static placement to line up with collision
+    //also holds all of the other objects on the desk
+    // may add annother for below.
+    return <primitive object={gltf.scene} scale={[4,4,4]} rotation={[0,0,.4]} offset={[0,0,0]}/>
 }
 
 useGLTF.preload("./models/intro/static/base.glb");
+
+

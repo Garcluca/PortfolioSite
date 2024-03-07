@@ -265,7 +265,7 @@ export default class Physics
                 const quaternion = new CANNON.Quaternion()
                 quaternion.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), Math.PI / 2)
 
-                body.type = CANNON.Body.KINEMATIC
+                body.type = CANNON.Body.dynamic
 
                 body.addShape(shape, new CANNON.Vec3(), quaternion)
                 this.car.wheels.bodies.push(body)
@@ -733,7 +733,7 @@ export default class Physics
                     /////  literally upscale the mesh by a scaling vector passed in through options
                     /////  from the top down. 
                     /////  it just works
-                    /////   why is it getting an automesh scale from the glb file? who fucking knows
+                    /////   why is it getting an automesh scale from the glb file?
                     /////   why did the
                     if(_options.scale){
                         // console.log(mesh.scale)

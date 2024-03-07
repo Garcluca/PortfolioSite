@@ -18,7 +18,7 @@ export default class EasterEggs
         this.container.matrixAutoUpdate = false
 
         this.setKonamiCode()
-        this.setWigs()
+        //this.setWigs()
         // this.setEggs()
     }
 

@@ -30,7 +30,7 @@ export default class InformationSection
         this.objects.add({
             base: this.resources.items.informationStaticBase.scene,
             collision: this.resources.items.informationStaticCollision.scene,
-            floorShadowTexture: this.resources.items.informationStaticFloorShadowTexture,
+           // floorShadowTexture: this.resources.items.informationStaticFloorShadowTexture,
             offset: new THREE.Vector3(this.x, this.y, 0),
             mass: 0
         })
@@ -89,19 +89,19 @@ export default class InformationSection
         // Options
         this.links.options = [
             {
-                href: 'https://twitter.com/bruno_simon/',
-                labelTexture: this.resources.items.informationContactTwitterLabelTexture
-            },
-            {
-                href: 'https://github.com/brunosimon/',
-                labelTexture: this.resources.items.informationContactGithubLabelTexture
-            },
-            {
-                href: 'https://www.linkedin.com/in/simonbruno77/',
+                href: 'https://www.linkedin.com/in/lucas-r-garcia/',
                 labelTexture: this.resources.items.informationContactLinkedinLabelTexture
             },
             {
-                href: 'mailto:simon.bruno.77@gmail.com',
+                href: 'https://github.com/Garcluca',
+                labelTexture: this.resources.items.informationContactGithubLabelTexture
+            },
+            {
+                href: 'https://en.wikipedia.org/wiki/Twitter',
+                labelTexture: this.resources.items.informationContactTwitterLabelTexture
+            },
+            {
+                href: 'mailto:lucas.rudolph.garcia@gmail.com',
                 labelTexture: this.resources.items.informationContactMailLabelTexture
             }
         ]

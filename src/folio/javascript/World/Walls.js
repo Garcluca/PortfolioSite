@@ -46,9 +46,9 @@ export default class Walls
                         const offset = new THREE.Vector3()
                         offset.add(shape.offsetWidth.clone().multiplyScalar(j - (shape.widthCount - 1) * 0.5))
                         offset.add(shape.offsetHeight.clone().multiplyScalar(i))
-                        offset.x += (Math.random() - 0.5) * shape.randomOffset.x
-                        offset.y += (Math.random() - 0.5) * shape.randomOffset.y
-                        offset.z += (Math.random() - 0.5) * shape.randomOffset.z
+                        offset.x += (Math.random() - 0.5) * shape.randomOffset.x  
+                        offset.y += (Math.random() - 0.5) * shape.randomOffset.y 
+                        offset.z += (Math.random() - 0.5) * shape.randomOffset.z 
 
                         if(_options.shape.type === 'brick' && i % 2 === 0)
                         {
@@ -56,9 +56,9 @@ export default class Walls
                         }
 
                         const rotation = new THREE.Euler()
-                        rotation.x += (Math.random() - 0.5) * shape.randomRotation.x
-                        rotation.y += (Math.random() - 0.5) * shape.randomRotation.y
-                        rotation.z += (Math.random() - 0.5) * shape.randomRotation.z
+                        rotation.x += (Math.random() - 0.5) * shape.randomRotation.x 
+                        rotation.y += (Math.random() - 0.5) * shape.randomRotation.y 
+                        rotation.z += (Math.random() - 0.5) * shape.randomRotation.z 
 
                         wall.coordinates.push({
                             offset,

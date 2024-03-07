@@ -52,13 +52,24 @@ export default class Camera
         this.angle.value.copy(this.angle.items.default)
 
         // Set method
+        //actually used in the projects section.
+        // the angle.items values are set and actually used in this instance
         this.angle.set = (_name) =>
         {
+            console.log("value was changed")
             const angle = this.angle.items[_name]
             if(typeof angle !== 'undefined')
             {
-                TweenLite.to(this.angle.value, 2, { ...angle, ease: Power1.easeInOut })
+                if(_name === "deskchange")
+                {
+
+                }
+                else
+                {
+                    TweenLite.to(this.angle.value, 2, { ...angle, ease: Power1.easeInOut })
+                }
             }
+        
         }
 
         // Debug
@@ -184,7 +195,7 @@ export default class Camera
         this.pan.needsUpdate = false
         this.pan.hitMesh = new THREE.Mesh(
             new THREE.PlaneBufferGeometry(500, 500, 1, 1),
-            new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true, visible: false })
+            new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: false, visible: false })
         )
         this.container.add(this.pan.hitMesh)
 

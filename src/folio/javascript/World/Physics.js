@@ -53,7 +53,7 @@ export default class Physics
         this.models = {}
         this.models.container = new THREE.Object3D()
         //// this enables the wireframes, massively helpful for actually debugging
-        this.models.container.visible = true
+        this.models.container.visible = false
         this.models.materials = {}
         this.models.materials.static = new THREE.MeshBasicMaterial({ color: 0x0000ff, wireframe: true })
         this.models.materials.dynamic = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true })
@@ -86,11 +86,11 @@ export default class Physics
         this.materials.contacts.dummyDummy = new CANNON.ContactMaterial(this.materials.items.dummy, this.materials.items.dummy, { friction: 0.5, restitution: 0.3, contactEquationStiffness: 100000 })
         this.world.addContactMaterial(this.materials.contacts.dummyDummy)
 
-       this.materials.contacts.floorWheel = new CANNON.ContactMaterial(this.materials.items.floor, this.materials.items.wheel, { friction: 0.3, restitution: 0, contactEquationStiffness: 1000 })
+       this.materials.contacts.floorWheel = new CANNON.ContactMaterial(this.materials.items.floor, this.materials.items.wheel, { friction: 9, restitution: 0.3, contactEquationStiffness: 1000 })
         this.world.addContactMaterial(this.materials.contacts.floorWheel)
 
         // //does kind of mess with running 
-        this.materials.contacts.wheelDummy = new CANNON.ContactMaterial(this.materials.items.dummy, this.materials.items.wheel, { friction: 0.3, restitution: 0, contactEquationStiffness: 10000 })
+        this.materials.contacts.wheelDummy = new CANNON.ContactMaterial(this.materials.items.dummy, this.materials.items.wheel, { friction: 9, restitution: 0.3, contactEquationStiffness: 10000 })
         this.world.addContactMaterial(this.materials.contacts.wheelDummy)
     }
 
@@ -187,7 +187,8 @@ export default class Physics
 
             this.car.chassis.body = new CANNON.Body({ mass: this.car.options.chassisMass })
             this.car.chassis.body.allowSleep = false
-            this.car.chassis.body.position.set(0, 0, 30)
+            //sets the initial car position
+            this.car.chassis.body.position.set(10, 5, 30)
             this.car.chassis.body.sleep()
             this.car.chassis.body.addShape(this.car.chassis.shape, this.car.options.chassisOffset)
             this.car.chassis.body.quaternion.setFromAxisAngle(new CANNON.Vec3(0, 0, 1), - Math.PI * 0.5)
@@ -706,7 +707,7 @@ export default class Physics
                     /////  literally upscale the mesh by a scaling vector passed in through options
                     /////  from the top down. 
                     /////  it just works
-                    /////   why is it getting an automesh scale from the glb file? who fucking knows
+                    /////   why is it getting an automesh scale from the glb file? 
                     /////   why did the
                     if(_options.scale){
                         // console.log(mesh.scale)

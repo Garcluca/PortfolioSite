@@ -2,19 +2,7 @@
 
 ## 7. Adding Materialized Objects
 
-![Portfolio](./portfolio.png)
 
-Hey everyone! 👋
-
-This branch contains the code of [video #7](https://www.youtube.com/watch?v=tjj-guCnCmA) of this course where we are converting [Bruno Simon's portfolio project](https://bruno-simon.com/) from three.js to react three fiber.
-
-You can use this project as a reference if you get stuck somewhere or if you want to check which exact dependency versions are being used in the videos.
-
-Bruno Simon's portfolio might be updated over time as well, so feel free to download the version downloaded in the video by copying the `src/folio` folder. Please note that the files inside of that folder might be edited slightly in the videos to keep things working. The unedited version can be found [here](https://github.com/sjoerdvanBommel/threeveloper/tree/011-bruno-simon-portfolio-introduction/src/folio).
-
-If you're not familiar with three.js yet, definitely check out [my other videos](https://www.youtube.com/channel/UC74yl2lsr6zF9RENwXrEkpw/) and Bruno Simon's [three.js journey](https://threejs-journey.com/) course.
-
-The source code for each course video is seperated into it's own branch. The link to the branch is added to the description of that video.
 
 👩‍💻 Enjoy coding! 👨‍💻
 
@@ -31,3 +19,27 @@ npm run install
 ```
 npm run dev
 ```
+
+
+
+## Bibliography and Attributions
+
+this project was based a buch of different projects and models.
+
+The website is essentially a game engine that is made out of various javascript libraries and remixed 3d Models
+
+Plant Decor by Anonymous [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/9YCWTMzIDj5)
+
+Plants - Assorted shelf plants by Jakers_H [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/5COCzyz489J)
+
+https://github.com/brunosimon/folio-2019
+
+Walk in the Woods by Don Carson [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/38m6Q1H12DU)
+
+Phone by Alex Safayan [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/1L9oJAw6nY2)
+
+ https://github.com/pmndrs/gltfjsx 
+
+Typewriter by Pat Siefring [CC-BY] (https://creativecommons.org/licenses/by/3.0/) via Poly Pizza (https://poly.pizza/m/0wEEWpFFmdd)
+
+Ramp by Quaternius (https://poly.pizza/m/cS1JQReXZs)

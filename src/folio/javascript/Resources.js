@@ -28,12 +28,35 @@ import matcapMetalSource from '../models/matcaps/metal.png'
 // Intro
 import introStaticBaseSource from '../models/intro/static/base.glb'
 import introStaticCollisionSource from '../models/intro/static/collision.glb'       //don't change the hardcoding paths, it's confusing to debug 
+import introStaticRampCollisionSource from '../models/intro/static/rampcollision.glb'
+import introStaticRampCollision2Source from '../models/intro/static/rampcollision2.glb'
+
+
+
 import introStaticFloorShadowSource from '../models/intro/static/floorShadow.png'
+
+//introduction
+
+import introIntroductionSource from '../models/intro/instructions/introduction.png'
+
 
 import introInstructionsLabelsSource from '../models/intro/instructions/labels.glb'
 import introInstructionsArrowsSource from '../models/intro/instructions/arrows.png'
 import introInstructionsControlsSource from '../models/intro/instructions/controls.png'
 import introInstructionsOtherSource from '../models/intro/instructions/other.png'
+
+//other stuff that hopefully makes it into the thing 
+
+//new projects 
+import addedImageCatSource from  '../models/intro/instructions/cat.png'
+import skill1Source from '../models/skills/skill1.png'
+import skill2Source from '../models/skills/skill2.png'
+import skill3Source from '../models/skills/skill3.png'
+import skill4Source from '../models/skills/skill4.png'
+
+
+
+
 
 import introArrowKeyBaseSource from '../models/intro/arrowKey/base.glb'
 import introArrowKeyCollisionSource from '../models/intro/arrowKey/collision.glb'
@@ -117,6 +140,7 @@ import projectsPriorHoldingsFloorSource from '../models/projects/priorHoldings/f
 import projectsOranoFloorSource from '../models/projects/orano/floorTexture.png'
 // import projectsGleecChatFloorSource from '../models/projects/gleecChat/floorTexture.png'
 import projectsKepplerFloorSource from '../models/projects/keppler/floorTexture.png'
+
 
 // Information
 import informationStaticBaseSource from '../models/information/static/base.glb'
@@ -257,12 +281,38 @@ export default class Resources extends EventEmitter
             // Intro
             { name: 'introStaticBase', source: introStaticBaseSource },
             { name: 'introStaticCollision', source: introStaticCollisionSource },
+
+            //added collision for the ramp so maybe it'll reset the barrier of when friction decides not to work 
+            { name: 'introStaticRampCollision', source: introStaticRampCollisionSource},
+            { name: 'introStaticRampCollision2', source: introStaticRampCollision2Source},
+
+
+
             { name: 'introStaticFloorShadow', source: introStaticFloorShadowSource, type: 'texture' },
+
+
+ 
+            { name: 'introIntroduction', source: introIntroductionSource, type: 'texture' },
+            
+
 
             { name: 'introInstructionsLabels', source: introInstructionsLabelsSource },
             { name: 'introInstructionsArrows', source: introInstructionsArrowsSource, type: 'texture' },
             { name: 'introInstructionsControls', source: introInstructionsControlsSource, type: 'texture' },
             { name: 'introInstructionsOther', source: introInstructionsOtherSource, type: 'texture' },
+
+
+
+            { name: 'addedImageCat', source: addedImageCatSource, type: 'texture' },
+
+            //new projects
+            { name: 'Skill1', source: skill1Source, type: 'texture' },
+            { name: 'Skill2', source: skill2Source, type: 'texture' },
+            { name: 'Skill3', source: skill3Source, type: 'texture' },  
+            { name: 'Skill4', source: skill4Source, type: 'texture' },
+
+
+            
 
             { name: 'introArrowKeyBase', source: introArrowKeyBaseSource },
             { name: 'introArrowKeyCollision', source: introArrowKeyCollisionSource },

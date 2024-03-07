@@ -4,6 +4,9 @@ import ProjectBoardMaterial from '../../Materials/ProjectBoard.js'
 import TweenLite from 'gsap/TweenLite'
 import { Power4 } from 'gsap/EasePack'
 
+
+
+
 export default class Project
 {
     constructor(_options)
@@ -22,6 +25,17 @@ export default class Project
         this.y = _options.y
         this.imageSources = _options.imageSources
         this.floorTexture = _options.floorTexture
+
+
+        //SETS THE OFFSETS TO CARRY OVER FROM PROJECTS
+        this.offset = _options.offset
+        this.offset.x = _options.offset.x
+        this.offset.y = _options.offset.y
+        this.offset.z = _options.offset.z
+
+
+        console.log("\n\n\n\n")
+        console.log(_options.floorTexture)
         this.link = _options.link
         this.distinctions = _options.distinctions
 
@@ -60,12 +74,17 @@ export default class Project
         {
             // Set up
             const board = {}
-            board.x = this.x + this.boards.xStart + i * this.boards.xInter
-            board.y = this.y + this.boards.y
+
+            //ADDS THE OFFSET TO EACH BOARD
+            board.x = this.x + this.boards.xStart + i * this.boards.xInter + this.offset.x
+            board.y = this.y + this.boards.y + this.offset.y
 
             // Create structure with collision
+
+            // adds the ability to change the 
+
             this.objects.add({
-                base: this.resources.items.projectsBoardStructure.scene,
+                base: this.resources.items.noneBase.scene,
                 collision: this.resources.items.projectsBoardCollision.scene,
                 floorShadowTexture: this.resources.items.projectsBoardStructureFloorShadowTexture,
                 offset: new THREE.Vector3(board.x, board.y, 0),
@@ -91,9 +110,10 @@ export default class Project
             image.src = _imageSource
 
             // Plane
+            
             board.planeMesh = this.meshes.boardPlane.clone()
-            board.planeMesh.position.x = board.x
-            board.planeMesh.position.y = board.y
+            board.planeMesh.position.x = board.x                    //DOES NOT NEED OFFSET AGAIN AS IT IS BASED OFF OF THE BOARD POSITION
+            board.planeMesh.position.y = board.y 
             board.planeMesh.matrixAutoUpdate = false
             board.planeMesh.updateMatrix()
             board.planeMesh.material = new ProjectBoardMaterial()
@@ -117,8 +137,9 @@ export default class Project
 
         // Container
         this.floor.container = new THREE.Object3D()
-        this.floor.container.position.x = this.x + this.floor.x
-        this.floor.container.position.y = this.y + this.floor.y
+        this.floor.container.position.x = this.x + this.floor.x + this.offset.x         //ADDS THE OFFSET TO THE FLOOR
+        this.floor.container.position.y = this.y + this.floor.y + this.offset.y
+        this.floor.container.position.z = this.offset.z
         this.floor.container.matrixAutoUpdate = false
         this.floor.container.updateMatrix()
         this.container.add(this.floor.container)
@@ -142,7 +163,7 @@ export default class Project
         // Distinctions
         if(this.distinctions)
         {
-            for(const _distinction of this.distinctions)
+            for(const _distinction of this.distinctions)                //adds a screen with an offset based on the slide
             {
                 let base = null
                 let collision = null
@@ -198,9 +219,9 @@ export default class Project
 
         // Area label
         this.floor.areaLabel = this.meshes.areaLabel.clone()
-        this.floor.areaLabel.position.x = this.link.x
-        this.floor.areaLabel.position.y = this.link.y
-        this.floor.areaLabel.position.z = 0.001
+        this.floor.areaLabel.position.x = this.link.x - this.offset.x           //THE ADDED OFFDET MAKES THE OPEN NOT FUCKED
+        this.floor.areaLabel.position.y = this.link.y - this.offset.y
+        this.floor.areaLabel.position.z = 0.001 
         this.floor.areaLabel.matrixAutoUpdate = false
         this.floor.areaLabel.updateMatrix()
         this.floor.container.add(this.floor.areaLabel)

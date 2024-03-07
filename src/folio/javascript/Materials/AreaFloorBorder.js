@@ -13,7 +13,7 @@ export default function()
     }
 
     const material = new THREE.ShaderMaterial({
-        wireframe: true,
+        wireframe: false,
         transparent: true,
         depthTest: true,
         depthWrite: false,

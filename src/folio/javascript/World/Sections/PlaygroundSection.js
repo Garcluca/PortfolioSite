@@ -210,7 +210,9 @@ export default class PlaygroundSection
 
         // Reset area
         this.bowling.resetArea = this.areas.add({       //could use the three vector z coordinate to synch 
-            position: new THREE.Vector3(this.bowling.x , this.bowling.y, 2),
+                                                        // NOPE, Z DOES JACK SHIT
+                                                        //only use x and y
+            position: new THREE.Vector3(this.bowling.x , this.bowling.y + 5, -110),
             halfExtents: new THREE.Vector2(2, 2)
         })
         this.bowling.resetArea.on('interact', () =>
@@ -218,12 +220,15 @@ export default class PlaygroundSection
             this.bowling.reset()
         })
 
-        // Reset label
+        this.bowling.resetArea.position.z = 100
+
+        // Reset label, literally just the wrord on top of the interactable square
+        //reg pics are fucked and transparent
         this.bowling.areaLabelMesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(2, 0.5), new THREE.MeshBasicMaterial({ transparent: true, depthWrite: false, color: 0xffffff, alphaMap: this.resources.items.areaResetTexture }))
         this.bowling.areaLabelMesh.position.x = this.bowling.x
         this.bowling.areaLabelMesh.position.y = this.bowling.y
         
-        this.bowling.areaLabelMesh.position.z = 0 // added z positioning areapos
+        this.bowling.areaLabelMesh.position.z = 10 // added z positioning areapos
                                                                // should probably sync up the mesh position and the area positions at some point
                                                                // bowling area z is fucked
 

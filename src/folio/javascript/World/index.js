@@ -101,9 +101,9 @@ export default class
                 }
             }
 
-            // Car
+            // sets the initial car position
             this.physics.car.chassis.body.sleep()
-            this.physics.car.chassis.body.position.set(0, 0, 30)               //car
+            this.physics.car.chassis.body.position.set(10, 5, 30)               //car
            // console.log(this.physics.car)
 
             window.setTimeout(() =>
@@ -408,6 +408,8 @@ export default class
         this.container.add(this.car.container)
     }
 
+    //literally any of these can just be deleted and it'll actually work as expected
+    // it just deletes the scene from the final project 
     setSections()
     {
         this.sections = {}
@@ -468,18 +470,21 @@ export default class
         this.container.add(this.sections.intro.container)
 
         // Crossroads
-        this.sections.crossroads = new CrossroadsSection({
-            ...options,
-            x: 0,
-            y: - 30
-        })
-        this.container.add(this.sections.crossroads.container)
+        // this.sections.crossroads = new CrossroadsSection({
+        //     ...options,
+        //     x: 0,
+        //     y: - 30
+        // })
+        // this.container.add(this.sections.crossroads.container)
 
         // Projects
         this.sections.projects = new ProjectsSection({
             ...options,
-            x: 30,
-            y: - 30
+
+            //+ in the y direction is backwards, further away from the camera
+            // think of the scene in map directions, not stage / relative directions
+            x: 40,
+            y: -40,
             // x: 0,
             // y: 0
         })
@@ -489,7 +494,7 @@ export default class
         this.sections.information = new InformationSection({
             ...options,
             x: 1.2,
-            y: - 55
+            y: - 75
             // x: 0,
             // y: - 10
         })
@@ -498,8 +503,8 @@ export default class
         // Playground
         this.sections.playground = new PlaygroundSection({
             ...options,
-            x: - 38,
-            y: - 34
+            x: - 55,
+            y: - 14
             // x: - 15,
             // y: - 4
         })

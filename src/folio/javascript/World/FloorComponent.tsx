@@ -6,10 +6,11 @@ export default function FloorComponent() {
     useControls(
       "Floor",
       {
-        topLeftColor: "#f5883c",
-        topRightColor: "#ff9043",
-        bottomLeftColor: "#fccf92",
-        bottomRightColor: "#f5aa58",
+        // apparently if you omit or double add the sharp  it defaults to white
+        topLeftColor: "#df00f5",
+        topRightColor: "#8928eb",
+        bottomLeftColor: "#4980f2",
+        bottomRightColor: "#9944fc",
       },
       { collapsed: true, color: "#f58e11" }
     );
