@@ -5,7 +5,7 @@ import { glslify } from "vite-plugin-glslify";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), glslify()],
-  base:'/PortfolioSite/',
+
   assetsInclude: ["**/*.glb",'**/*.gltf',
     '**/*.glb',
     '**/*.fbx',
