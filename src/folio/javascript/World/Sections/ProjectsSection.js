@@ -158,7 +158,7 @@ export default class ProjectsSection
                 },
                 distinctions:
                 [
-                    { type: 'fwa', x: 3.95, y: 4.15 }
+                    // { type: 'fwa', x: 3.95, y: 4.15 }
                 ],
                 offset:{
                     x: 0,
@@ -191,8 +191,8 @@ export default class ProjectsSection
                 },
                 distinctions:
                 [
-                    { type: 'awwwards', x: 3.95, y: 4.15 },
-                    { type: 'fwa', x: 5.6, y: 4.15 }
+                    // { type: 'awwwards', x: 3.95, y: 4.15 },
+                    // { type: 'fwa', x: 5.6, y: 4.15 }
                 ],
                 offset:{
                     x: 0,

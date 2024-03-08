@@ -48,54 +48,54 @@ export default class ThreejsJourney
 
     setYesNo()
     {
-        // Clicks
-        this.$yes.addEventListener('click', () =>
-        {
-            TweenLite.delayedCall(2, () =>
-            {
-                this.hide()
-            })
-            window.localStorage.setItem('threejsJourneyPrevent', 1)
-        })
+    //     // Clicks
+    //     this.$yes.addEventListener('click', () =>
+    //     {
+    //         TweenLite.delayedCall(2, () =>
+    //         {
+    //             this.hide()
+    //         })
+    //         window.localStorage.setItem('threejsJourneyPrevent', 1)
+    //     })
 
-        this.$no.addEventListener('click', () =>
-        {
-            this.next()
+    //     this.$no.addEventListener('click', () =>
+    //     {
+    //         this.next()
 
-            TweenLite.delayedCall(5, () =>
-            {
-                this.hide()
-            })
-        })
+    //         TweenLite.delayedCall(5, () =>
+    //         {
+    //             this.hide()
+    //         })
+    //     })
 
-        // Hovers
-        this.$yes.addEventListener('mouseenter', () =>
-        {
-            this.$container.classList.remove('is-hover-none')
-            this.$container.classList.remove('is-hover-no')
-            this.$container.classList.add('is-hover-yes')
-        })
+    //     // Hovers
+    //     this.$yes.addEventListener('mouseenter', () =>
+    //     {
+    //         this.$container.classList.remove('is-hover-none')
+    //         this.$container.classList.remove('is-hover-no')
+    //         this.$container.classList.add('is-hover-yes')
+    //     })
 
-        this.$no.addEventListener('mouseenter', () =>
-        {
-            this.$container.classList.remove('is-hover-none')
-            this.$container.classList.add('is-hover-no')
-            this.$container.classList.remove('is-hover-yes')
-        })
+    //     this.$no.addEventListener('mouseenter', () =>
+    //     {
+    //         this.$container.classList.remove('is-hover-none')
+    //         this.$container.classList.add('is-hover-no')
+    //         this.$container.classList.remove('is-hover-yes')
+    //     })
 
-        this.$yes.addEventListener('mouseleave', () =>
-        {
-            this.$container.classList.add('is-hover-none')
-            this.$container.classList.remove('is-hover-no')
-            this.$container.classList.remove('is-hover-yes')
-        })
+    //     this.$yes.addEventListener('mouseleave', () =>
+    //     {
+    //         this.$container.classList.add('is-hover-none')
+    //         this.$container.classList.remove('is-hover-no')
+    //         this.$container.classList.remove('is-hover-yes')
+    //     })
 
-        this.$no.addEventListener('mouseleave', () =>
-        {
-            this.$container.classList.add('is-hover-none')
-            this.$container.classList.remove('is-hover-no')
-            this.$container.classList.remove('is-hover-yes')
-        })
+    //     this.$no.addEventListener('mouseleave', () =>
+    //     {
+    //         this.$container.classList.add('is-hover-none')
+    //         this.$container.classList.remove('is-hover-no')
+    //         this.$container.classList.remove('is-hover-yes')
+    //     })
     }
 
     setLog()
@@ -127,10 +127,13 @@ export default class ThreejsJourney
 //             `,
 //             'color: #705df2;'
 //         )
-        console.log('%cWhat are you doing here?! you sneaky developer...', 'color: #32ffce');
-        console.log('%cDo you want to learn how this portfolio has been made?', 'color: #32ffce');
-        console.log('%cCheckout Three.js Journey 👉 https://threejs-journey.com?c=p2', 'color: #32ffce');
-        console.log('%c— Bruno', 'color: #777777');
+        
+        console.log('%cHey there, look like you know your way around the dev tools', 'color: #32ffce');
+        console.log('%cI\'n not gonna lie, I learned a lot but diving through obsfucated bytecode and nonsense dependencies from a pre-2020 codebase was the most tedious thing I\'ve ever done', 'color: #32ffce');
+        console.log('%c I added a bunch of new code, models, physics, and collision but I bootstaped this from bruno simon\s original site', 'color: #32ffce');
+        console.log('%cCheck out his course here https://threejs-journey.com?c=p2', 'color: #32ffce');
+        console.log('%cI didn\'t end up using the course but if you are starting from scratch it\'s probably an easier stert', 'color: #32ffce');
+
     }
 
     hide()

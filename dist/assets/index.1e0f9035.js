@@ -67113,8 +67113,8 @@ var skill3Source = "/assets/skill3.c5e2243f.png";
 var skill4Source = "/assets/skill4.0a49b97c.png";
 var introArrowKeyBaseSource = "/assets/base.7a894c6a.glb";
 var introArrowKeyCollisionSource = "/assets/collision.239bd890.glb";
-var introTestBaseSource = "/assets/collision.9021ced4.glb";
-var introTestCollisionSource = "/assets/collision.9021ced4.glb";
+var introTestBaseSource = "/assets/base.9021ced4.glb";
+var introTestCollisionSource = "/assets/base.9021ced4.glb";
 var introBBaseSource = "/assets/base.2d4812e5.glb";
 var introBCollisionSource = "/assets/collision.3ec201e7.glb";
 var introRBaseSource = "/assets/base.e8a4aee7.glb";
@@ -67400,44 +67400,13 @@ class ThreejsJourney {
     });
   }
   setYesNo() {
-    this.$yes.addEventListener("click", () => {
-      TweenLite.delayedCall(2, () => {
-        this.hide();
-      });
-      window.localStorage.setItem("threejsJourneyPrevent", 1);
-    });
-    this.$no.addEventListener("click", () => {
-      this.next();
-      TweenLite.delayedCall(5, () => {
-        this.hide();
-      });
-    });
-    this.$yes.addEventListener("mouseenter", () => {
-      this.$container.classList.remove("is-hover-none");
-      this.$container.classList.remove("is-hover-no");
-      this.$container.classList.add("is-hover-yes");
-    });
-    this.$no.addEventListener("mouseenter", () => {
-      this.$container.classList.remove("is-hover-none");
-      this.$container.classList.add("is-hover-no");
-      this.$container.classList.remove("is-hover-yes");
-    });
-    this.$yes.addEventListener("mouseleave", () => {
-      this.$container.classList.add("is-hover-none");
-      this.$container.classList.remove("is-hover-no");
-      this.$container.classList.remove("is-hover-yes");
-    });
-    this.$no.addEventListener("mouseleave", () => {
-      this.$container.classList.add("is-hover-none");
-      this.$container.classList.remove("is-hover-no");
-      this.$container.classList.remove("is-hover-yes");
-    });
   }
   setLog() {
-    console.log("%cWhat are you doing here?! you sneaky developer...", "color: #32ffce");
-    console.log("%cDo you want to learn how this portfolio has been made?", "color: #32ffce");
-    console.log("%cCheckout Three.js Journey \u{1F449} https://threejs-journey.com?c=p2", "color: #32ffce");
-    console.log("%c\u2014 Bruno", "color: #777777");
+    console.log("%cHey there, look like you know your way around the dev tools", "color: #32ffce");
+    console.log("%cI'n not gonna lie, I learned a lot but diving through obsfucated bytecode and nonsense dependencies from a pre-2020 codebase was the most tedious thing I've ever done", "color: #32ffce");
+    console.log("%c I added a bunch of new code, models, physics, and collision but I bootstaped this from bruno simons original site", "color: #32ffce");
+    console.log("%cCheck out his course here https://threejs-journey.com?c=p2", "color: #32ffce");
+    console.log("%cI didn't end up using the course but if you are starting from scratch it's probably an easier stert", "color: #32ffce");
   }
   hide() {
     for (const _$message of this.$messages) {
@@ -78771,9 +78740,7 @@ class ProjectsSection {
             y: 1.5
           }
         },
-        distinctions: [
-          { type: "fwa", x: 3.95, y: 4.15 }
-        ],
+        distinctions: [],
         offset: {
           x: 0,
           y: 0,
@@ -78797,10 +78764,7 @@ class ProjectsSection {
             y: 1.5
           }
         },
-        distinctions: [
-          { type: "awwwards", x: 3.95, y: 4.15 },
-          { type: "fwa", x: 5.6, y: 4.15 }
-        ],
+        distinctions: [],
         offset: {
           x: 0,
           y: 0,

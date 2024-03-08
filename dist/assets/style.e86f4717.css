@@ -218,7 +218,7 @@ html {
   height: 16px;
   left: calc(100% - 1px);
   bottom: 13px;
-  background: url("/assets/bubbleTip.fa8050f7.svg");
+  background: url("/assets/bubbleTip.e07b376d.svg");
 }
 
 .threejs-journey .message.is-answers {
@@ -801,9 +801,6 @@ video {
 }
 .relative {
   position: relative;
-}
-.block {
-  display: block;
 }
 .hidden {
   display: none;
