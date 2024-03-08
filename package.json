@@ -1,5 +1,6 @@
 {
   "name": "my-first-react-three-fiber-app",
+  homepage": "https://garcluca.github.io/PortfolioSite/",
   "private": true,
   "version": "0.0.0",
   "scripts": {
