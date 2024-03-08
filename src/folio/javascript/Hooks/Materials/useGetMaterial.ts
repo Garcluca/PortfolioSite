@@ -30,7 +30,7 @@ export function useGetMaterial() {
     const color = getMatcapColor(meshName);
     if (color) {
       const matcap = matcapTextures[color];
-      return new FolioMatcapMaterial(matcap);
+      return //new FolioMatcapMaterial(matcap);
     }
 
     return new MeshNormalMaterial();

@@ -287,7 +287,7 @@ const Folio = () => {
       world: world.current,
     });
   }, []);
-  return <WorldComponent options_prop={world.current} />;
+  return <WorldComponent/>;
 };
 
 export default Folio;

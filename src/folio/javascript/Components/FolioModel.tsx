@@ -12,7 +12,7 @@ import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 
-export default function FolioModel(props) {
+export default function FolioModel() {
 
 
     const gltf = useLoader(GLTFLoader, "./models/intro/static/base.glb")

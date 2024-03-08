@@ -7,8 +7,6 @@ import EventEmitter from './Utils/EventEmitter.js'
 
 //Placeholder or Globals
 
-import noneBase from '../models/intro/static/none.glb'
-
 // Matcaps
 import matcapBeigeSource from '../models/matcaps/beige.png'
 import matcapBlackSource from '../models/matcaps/black.png'
@@ -26,6 +24,9 @@ import matcapMetalSource from '../models/matcaps/metal.png'
 // import matcapGoldSource from '../models/matcaps/gold.png'
 
 // Intro
+import noneBase1 from '../models/intro/static/none.glb'
+import noneBase2 from '../models/intro/static/none.glb'
+import noneBase3 from '../models/intro/static/none.glb'
 import introStaticBaseSource from '../models/intro/static/base.glb'
 import introStaticCollisionSource from '../models/intro/static/collision.glb'       //don't change the hardcoding paths, it's confusing to debug 
 import introStaticRampCollisionSource from '../models/intro/static/rampcollision.glb'
@@ -64,7 +65,7 @@ import introArrowKeyCollisionSource from '../models/intro/arrowKey/collision.glb
 //added test files
 
 import introTestBaseSource from '../models/intro/test/base.glb'
-import introTestCollisionSource from '../models/intro/Test/collision.glb'
+import introTestCollisionSource from '../models/intro/test/collision.glb'
 
 import introBBaseSource from '../models/intro/b/base.glb'
 import introBCollisionSource from '../models/intro/b/collision.glb'
@@ -257,9 +258,9 @@ export default class Resources extends EventEmitter
 
         this.loader.load([
             //Placeholders and Globals
-            { name: 'noneBase', source: noneBase},
-            { name: 'introNoneBase', source: noneBase },                  //making different ones for waaaay better readability 
-            { name: 'introNoneCollision', source: noneBase },
+            { name: 'noneBase', source: noneBase1},
+            { name: 'introNoneBase', source: noneBase2 },                  //making different ones for waaaay better readability 
+            { name: 'introNoneCollision', source: noneBase3 },
 
 
             // Matcaps

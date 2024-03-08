@@ -28,7 +28,7 @@ export default class Resources extends EventEmitter
 
         // Images
         this.loaders.push({
-            extensions: ['jpg', 'png'],
+            extensions: ['jpg', 'png', '.jpg', '.png'],
             action: (_resource) =>
             {
                 const image = new Image()
@@ -68,9 +68,8 @@ export default class Resources extends EventEmitter
         // GLTF
         const gltfLoader = new GLTFLoader()
         gltfLoader.setDRACOLoader(dracoLoader)
-
         this.loaders.push({
-            extensions: ['glb', 'gltf','.glb'],
+            extensions: ['.glb', '.gltf', "glb", "gltf"],
             action: (_resource) =>
             {
                 gltfLoader.load(_resource.source, (_data) =>
@@ -100,17 +99,30 @@ export default class Resources extends EventEmitter
      */
     load(_resources = [])
     {
+        let valid = []
+        let invalid = []
+        console.log(typeof _resources )
+
         for(const _resource of _resources)
         {
+            
             this.toLoad++
+
+            
             const extensionMatch = _resource.source.match(/\.([a-z]+)$/)
+            
+
+            valid.push(extensionMatch )
+            
+            if(extensionMatch != null && typeof extensionMatch !== "null"){ 
+            
             // if(extensionMatch[1] !== extensionMatch[2]){
-            //     console.log(extensionMatch);   
-            // }
+            //      console.log(extensionMatch);   
+            //  }
     
 
 
-            if(typeof extensionMatch[1] !== 'undefined')
+            if(typeof extensionMatch[1] !== 'undefined' && extensionMatch!== null)
             {
                 const extension = extensionMatch[1]
                 const loader = this.loaders.find((_loader) => _loader.extensions.find((_extension) => _extension === extension))
@@ -126,9 +138,21 @@ export default class Resources extends EventEmitter
             }
             else
             {
+                invalid.push({extensionMatch: this.toLoad})
                 console.warn(`Cannot found extension of ${_resource}`)
             }
         }
+
+
+
+
+        else{
+            console.log("ahhhhhhhh\n\n\n\n\n\n")
+        }
+        }
+
+        console.log(valid)
+        console.log(invalid)
     }
 
     /**

@@ -5,6 +5,22 @@ import { glslify } from "vite-plugin-glslify";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), glslify()],
-  base:'/PortfolioSite/',
-  assetsInclude: ["**/*.glb"],
+  base:'./',
+  assetsInclude: ["**/*.glb",'**/*.gltf',
+    '**/*.glb',
+    '**/*.fbx',
+    '**/*.obj',
+    '**/*.mtl',
+    '**/*.png',
+    '**/*.jpg',
+    '**/*.jpeg',],
+
+
+
+  build: {
+    minify: false, // Disable minification
+    cssCodeSplit: false, 
+    
+
+  }
 });
