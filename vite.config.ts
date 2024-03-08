@@ -5,7 +5,7 @@ import { glslify } from "vite-plugin-glslify";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), glslify()],
-  base:'./',
+  base:'/PortfolioSite/',
   assetsInclude: ["**/*.glb",'**/*.gltf',
     '**/*.glb',
     '**/*.fbx',
@@ -20,6 +20,7 @@ export default defineConfig({
   build: {
     minify: false, // Disable minification
     cssCodeSplit: false, 
+    assetsInlineLimit: 0,
     
 
   }
